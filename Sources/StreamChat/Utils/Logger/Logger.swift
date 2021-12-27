@@ -399,7 +399,6 @@ public class Logger {
         fileName: StaticString = #file,
         lineNumber: UInt = #line
     ) {
-        Swift.assertionFailure(String(describing: message()), file: fileName, line: lineNumber)
         log(
             .error,
             functionName: functionName,
@@ -408,6 +407,7 @@ public class Logger {
             message: "Assert failed: \(message())",
             subsystems: subsystems
         )
+        //        Swift.assertionFailure(String(describing: message()), file: fileName, line: lineNumber)
     }
 }
 
